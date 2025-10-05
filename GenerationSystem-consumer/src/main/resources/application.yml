@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.137.243:3306/public_generation?createDatabaseIfNotExist=true
+    username: BrainFlux
+    password: Wish090100!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically updates the schema based on your Entity classes
+#    show-sql: true       # Logs SQL queries to the console
+    properties:
+      hibernate:
+        format_sql: true # Formats the SQL output for better readability
+        dialect: org.hibernate.dialect.MySQL8Dialect # Specify the database dialect
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 994155354@qq.com
+    password: "qmuifupqnmrpbdjg"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  redis:
+    host: localhost
+    port: 6379
+    password: "96358"
+    timeout: 5000
+
+  rabbitmq:
+    host: 192.168.137.243
+    port: 5672
+    username: BrainFlux
+    password: 96358
+    virtual-host: myvhost
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+ip:
+  computerA: 192.168.137.74
+  computerS: 192.168.137.243
+  computer: 192.168.137.48
